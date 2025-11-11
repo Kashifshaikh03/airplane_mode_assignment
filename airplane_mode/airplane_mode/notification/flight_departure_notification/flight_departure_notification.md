@@ -1,0 +1,1 @@
+The flight {{ doc.name }} ({{ doc.airplane }}) from {{ doc.source_airport }} to {{ doc.destination_airport }} is scheduled to depart in 24 hours.

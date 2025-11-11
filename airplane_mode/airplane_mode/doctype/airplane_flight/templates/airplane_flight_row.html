@@ -1,0 +1,64 @@
+<div class="card">
+  <h4 class="title-sm">
+    {{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}
+  </h4>
+
+  <p class="info-sm">
+    <b>{{ doc.source_airport }}</b> → <b>{{ doc.destination_airport }}</b><br>
+    {{ frappe.utils.format_date(doc.date_of_departure, "d MMM, YYYY") }} | {{ doc.time_of_departure }} | {{ frappe.utils.format_duration(doc.duration) }}
+  </p>
+
+  <a href="{{ doc.route }}" class="btn-view">
+    View Flight
+  </a>
+</div>
+
+<style>
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #f9fafc);
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.07);
+  }
+
+  .title-sm {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 6px;
+  }
+
+  .info-sm {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .btn-view {
+    color: #3b82f6;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .btn-view:hover {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+</style>

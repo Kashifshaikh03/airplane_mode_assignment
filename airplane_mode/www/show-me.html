@@ -1,0 +1,29 @@
+{% set color = frappe.form_dict.color or 'black' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Me Colors</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .color-box {
+      width: 300px;
+      height: 200px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="color-box" style="background-color: {{ color }};"></div>
+</body>
+</html>

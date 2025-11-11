@@ -1,0 +1,75 @@
+<div class="card">
+  <h2 class="title">{{ doc.name }}</h2>
+
+  <h4 class="subtitle">Flight Details</h4>
+
+  <ul class="details">
+    <li><b>Airline:</b> {{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}</li>
+    <li>{{ doc.source_airport }} → {{ doc.destination_airport }}</li>
+    <li>{{ frappe.utils.format_date(doc.date_of_departure, "YYYY-MM-DD") }} | {{ doc.time_of_departure }}</li>
+    <li>Duration: {{ frappe.utils.format_duration(doc.duration) }}</li>
+  </ul>
+
+  <a href="/book-flight-web-form?flight={{ doc.name }}&price=5000" class="btn-book">Book Flight</a>
+</div>
+
+<style>
+  body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #f9fafc);
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 25px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+
+  .details {
+    list-style-type: disc;  /* ✅ adds bullet dots */
+    padding-left: 22px;     /* ✅ slight left indent */
+    margin-bottom: 25px;
+  }
+
+  .details li {
+    font-size: 15px;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+
+  .btn-book {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-book:hover {
+    background-color: #2563eb;
+  }
+</style>

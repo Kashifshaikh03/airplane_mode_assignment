@@ -145,6 +145,13 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+    "Airplane Ticket": {
+        "before_submit": "airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.prevent_unboarded_submission"
+    }
+}
+
+
 # Scheduled Tasks
 # ---------------
 
