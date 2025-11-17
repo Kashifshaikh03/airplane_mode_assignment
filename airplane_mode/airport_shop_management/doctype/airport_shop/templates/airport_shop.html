@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/assets/airplane_mode/css/shops.css">
+
+<div class="shop-detail-container">
+
+  <div class="shop-details-card">
+    <h2 class="title-sm">{{ doc.shop_name }}</h2>
+
+    <p class="info-sm"><b>Shop Number:</b> {{ doc.shop_number }}</p>
+    <p class="info-sm"><b>Airport:</b> {{ doc.airport }}</p>
+    <p class="info-sm"><b>Area:</b> {{ doc.area_sq_ft }} sq. ft.</p>
+    <p class="info-sm"><b>Rent Amount:</b> ₹{{ doc.rent_amount }}</p>
+
+    <p class="info-sm">
+      <b>Status:</b>
+      {% if doc.is_occupied %}
+          <span class="status-occupied">Occupied</span>
+      {% else %}
+          <span class="status-available">Available</span>
+      {% endif %}
+    </p>
+
+    <a href="/shop-lead" class="btn-apply">Apply for this Shop</a>
+  </div>
+
+</div>

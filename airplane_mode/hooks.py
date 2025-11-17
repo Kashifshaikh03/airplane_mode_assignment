@@ -20,6 +20,9 @@ app_license = "mit"
 # 		"has_permission": "airplane_mode.api.permission.has_app_permission"
 # 	}
 # ]
+# airplane_mode/hooks.py
+
+app_logo_url = "/assets/airplane_mode/image/airport_logo.png"
 
 # Includes in <head>
 # ------------------
@@ -29,7 +32,7 @@ app_license = "mit"
 # app_include_js = "/assets/airplane_mode/js/airplane_mode.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/airplane_mode/css/airplane_mode.css"
+web_include_css = "/assets/airplane_mode/css/airplane_mode.css"
 # web_include_js = "/assets/airplane_mode/js/airplane_mode.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -173,6 +176,15 @@ doc_events = {
 # 	],
 # }
 
+scheduler_events = {
+    "cron": {
+        "0 9 1 * *": [  
+            "airplane_mode.airport_shop_management.doctype.airport_shop.airport_shop.send_rent_due_reminders"
+        ]
+    }
+}
+
+
 # Testing
 # -------
 
@@ -249,3 +261,9 @@ doc_events = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {"dt": "Shop Type"},
+    {"dt": "Airport Shop Settings"},
+    {"dt": "Web Form"},
+    {"dt": "Print Format"}
+]

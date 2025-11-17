@@ -25,7 +25,9 @@
   "duration",
   "column_break_ufoz",
   "time_of_departure",
-  "amended_from"
+  "amended_from",
+  "section_break_jmyo",
+  "crew_member"
  ],
  "fields": [
   {
@@ -140,6 +142,16 @@
    "fieldname": "is_published",
    "fieldtype": "Check",
    "label": "Is Published"
+  },
+  {
+   "fieldname": "section_break_jmyo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Table",
+   "label": "Crew Member",
+   "options": "Crew Member Assignment"
   }
  ],
  "grid_page_length": 50,
@@ -153,7 +165,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-11-11 19:47:49.197395",
+ "modified": "2025-11-12 14:28:28.001655",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

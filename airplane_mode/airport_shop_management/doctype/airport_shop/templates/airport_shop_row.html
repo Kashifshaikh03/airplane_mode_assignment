@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/assets/airplane_mode/css/shops.css">
+
+<div class="shop-card">
+  <h4 class="title-sm">{{ doc.shop_name }}</h4>
+
+  <p class="info-sm">
+    <b>{{ doc.airport }}</b><br>
+    Rent: ₹{{ doc.rent_amount }}<br>
+    Status:
+    {% if doc.is_occupied %}
+        <span class="status-occupied">Occupied</span>
+    {% else %}
+        <span class="status-available">Available</span>
+    {% endif %}
+  </p>
+
+  <a href="{{ doc.route }}" class="btn-view">View Shop</a>
+</div>

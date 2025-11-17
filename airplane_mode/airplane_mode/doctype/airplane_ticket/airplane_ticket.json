@@ -8,6 +8,7 @@
  "field_order": [
   "passenger",
   "status",
+  "gate_number",
   "column_break_wrvo",
   "flight",
   "seat",
@@ -132,7 +133,8 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_bxlu",
@@ -155,13 +157,20 @@
   {
    "fieldname": "column_break_agsf",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Gate Number",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-11 20:03:56.523003",
+ "modified": "2025-11-12 15:13:36.727136",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

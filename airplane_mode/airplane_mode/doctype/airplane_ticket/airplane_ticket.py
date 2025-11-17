@@ -11,11 +11,16 @@ class AirplaneTicket(Document):
     def before_insert(doc):
         doc.check_flight_capacity()
         doc.set_seat()
+        doc.set_gate()
 
     def set_seat(doc):
         seat_number = random.randint(1, 99)
         seat_letter = random.choice(['A', 'B', 'C', 'D', 'E'])
         doc.seat = f"{seat_number}{seat_letter}"
+    
+    def set_gate(doc):
+        gate_number = random.randint(1, 12)
+        doc.gate_number = f"G{gate_number}"
 
     def validate(doc):
         doc.remove_duplicate_addons()
